@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::controller(AuthenticationController::class)->group(function(){
     Route::get('/register','register')->name('register');
-    Route::get('/store','store')->name('store');
+    Route::post('/store','store')->name('store');
     Route::get('/login','login')->name('login');
     Route::post('/authenticate', 'authenticate')->name('authentication');
     Route::get('/dashboard','dashboard')->name('dashboard');
