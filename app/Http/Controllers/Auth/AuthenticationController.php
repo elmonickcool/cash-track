@@ -52,4 +52,14 @@ class AuthenticationController extends Controller
             'email'=>'Your credentials do not match'
         ])->onlyInput('email');
     }
+
+    public function dashboard(){
+        if(Auth::check())
+        {
+            return view('auth.dashboard');
+        }
+        return redirect()->route('login')->withErrors([
+            'email'=>'Please login to access the dashboard',
+        ])->onlyInput('email');
+    }
 }
