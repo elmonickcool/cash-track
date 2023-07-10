@@ -16,6 +16,10 @@
                             You are logged in!
                         </div>
                     @endif
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Logout</button>
+                    </form>
                 </div>
             </div>
         </div>
