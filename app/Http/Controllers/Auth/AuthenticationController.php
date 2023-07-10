@@ -53,6 +53,11 @@ class AuthenticationController extends Controller
         ])->onlyInput('email');
     }
 
+    public function login()
+    {
+        return view('auth.login');
+    }
+
     public function dashboard(){
         if(Auth::check())
         {
