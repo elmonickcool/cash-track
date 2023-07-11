@@ -7,6 +7,7 @@
             <div class="card-header px-4 py-2 bg-gray-100 font-semibold flex justify-between items-center">
                 <h1>Welcome, {{ auth()->user()->name }}</h1>
                 <a href="{{ route('income.create') }}" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add Income</a>
+                <a href="{{ route('expense.create') }}" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Add Expense</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Logout</button>
