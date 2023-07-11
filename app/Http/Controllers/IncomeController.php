@@ -28,6 +28,6 @@ class IncomeController extends Controller
         $income->user_id = auth()->user()->id;
         $income->save();
 
-        return redirect()->route('income.create')->with('success', 'Income added successfully!');
+        return redirect()->route('auth.dashboard')->with('success', 'Income added successfully!');
     }
 }
