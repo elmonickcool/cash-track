@@ -1,6 +1,6 @@
 <!-- create.blade.php -->
 
-@extends('income.layout')
+@extends('auth.layout')
 
 @section('content')
     <div class="container">
