@@ -12,11 +12,22 @@ class IncomeController extends Controller
     }
 
     public function store(Request $request){
+
         $validateData = $request->validate([
             'amount'=>'required|numeric',
             'source'=>'required|string',
             'description'=>'nullable|string',
             'date'=>'required|date',
         ]);
+
+        $income = new Income();
+        $income->amount = $validateData['amount'];
+        $income->source = $validateData['source'];
+        $income->description = $validateData['description'];
+        $income->date = $validateData['date'];
+        $income->user_id = auth()->user()->id;
+        $income->save();
+
+        return redirect()->route('income.create')->with('success', 'Income added successfully!');
     }
 }
