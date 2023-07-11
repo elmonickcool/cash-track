@@ -9,6 +9,7 @@ class Income extends Model
 {
     use HasFactory;
 
+    protected $table = 'income';
     protected $fillable = ['amount','source','description','date'];
 
     public function user(){
