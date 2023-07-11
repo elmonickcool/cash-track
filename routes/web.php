@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticationController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExpenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,7 @@ Route::controller(AuthenticationController::class)->group(function(){
 Route::get('/income/create', [IncomeController::class, 'create'])->name('income.create');
 Route::post('/income', [IncomeController::class, 'store'])->name('income.store');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('auth.dashboard');
+
+Route::get('/expense/create',[ExpenseController::class,'create'])->name('expense.create');
+Route::post('/expense',[ExpenseController::class,'store'])->name('expense.store');
