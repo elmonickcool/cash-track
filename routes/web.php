@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticationController;
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,7 @@ Route::controller(AuthenticationController::class)->group(function(){
     Route::post('/logout','logout')->name('logout');
 });
 
-Route::get('/income/create', IncomeController::class,'create')->name('income.create');
-Route::post('/income', IncomeController::class,'store')->name('income.store');
+Route::get('/income/create', [IncomeController::class, 'create'])->name('income.create');
+Route::post('/income', [IncomeController::class, 'store'])->name('income.store');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
