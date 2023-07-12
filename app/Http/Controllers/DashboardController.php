@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Income;
+use App\Models\Expense;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
@@ -11,7 +12,8 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         $totalIncome = Income::where('user_id', $user->id)->sum('amount');
-        
-        return view('auth.dashboard', compact('totalIncome'));
+        $totalExpense = Expense::where('user_id',$user->id)->sum('amount');
+        $totalBalance = $totalIncome - $totalExpense;
+        return view('auth.dashboard', compact('totalIncome','totalExpense','totalBalance'));
     }
 }
