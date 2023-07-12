@@ -14,7 +14,7 @@
                 </form>
             </div>
             <div class="card-body px-4 py-2">
-               <!--  @if ($message = Session::get('success'))
+                <!--  @if ($message = Session::get('success'))
                 <div class="bg-green-200 text-green-800 px-4 py-2 rounded mb-4">
                     {{ $message }}
                 </div>
@@ -24,11 +24,15 @@
                 </div>
                 @endif -->
                 <div class="bg-green-200 text-green-800 px-4 py-2 rounded mb-4">
-                Total Income: {{ number_format($totalIncome, 2) }}
+                    Total Income: ${{ number_format($totalIncome, 2) }}
+                </div>
+                <div class="bg-red-200 text-red-800 px-4 py-2 rounded mb-4">
+                    Total Expense: ${{ number_format($totalExpense, 2) }}
+                </div>
+                <div class="bg-gray-200 text-black-800 px-4 py-2 rounded mb-4">
+                    Total Balance: ${{ number_format($totalBalance, 2) }}
+                </div>
             </div>
-            </div>
-           
-            
         </div>
     </div>
 </div>
